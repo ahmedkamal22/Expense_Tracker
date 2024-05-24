@@ -64,18 +64,12 @@ class _HomeScreenState extends State<HomeScreen> {
       key: scaffoldKey,
       appBar: AppBar(
         backgroundColor: Colors.deepPurple.shade900,
-        title: const Text("Flutter Expense Tracker"),
-        actions: [
-          IconButton(
-              onPressed: () {
-                navigateTo(
-                    context,
-                    ExpenseScreen(
-                      newExpense: addExpense,
-                    ));
-              },
-              icon: const Icon(Icons.add)),
-        ],
+        title: Text(
+          "Expense Tracker",
+          style: TextStyle(
+            color: Colors.grey[300],
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -84,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
           builder: (context) => Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Chart(expenses: expenses),
+              if (expenses.isNotEmpty) Chart(expenses: expenses),
               const SizedBox(
                 height: 10,
               ),
@@ -110,7 +104,8 @@ class _HomeScreenState extends State<HomeScreen> {
           fallback: (context) => Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Expanded(child: Chart(expenses: expenses)),
+              if (expenses.isNotEmpty)
+                Expanded(child: Chart(expenses: expenses)),
               const SizedBox(
                 width: 10,
               ),
@@ -135,8 +130,20 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          navigateTo(
+              context,
+              ExpenseScreen(
+                newExpense: addExpense,
+              ));
+        },
+        backgroundColor: Colors.blue,
+        child: const Icon(Icons.add),
+      ),
     );
   }
+
   Widget defaultItem(context, ExpenseModel expense) => Dismissible(
         key: Key(expense.id!),
         background: Container(

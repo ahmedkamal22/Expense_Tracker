@@ -1,16 +1,13 @@
-# expense_tracker
+**Expense Tracker App**
+This is a Flutter application for tracking personal expenses.
+The app allows users to add, edit, delete expenses and visualize spending patterns.
 
-Expense Tracking app.
+**Features**
 
-## Getting Started
+**Expense Management**: Add, edit, and delete expenses.
 
-This project is a starting point for a Flutter application.
+**Expense Categorization**: Categorize expenses for better organization.
 
-A few resources to get you started if this is your first Flutter project:
+**Analytics**: Visualize expenses with charts and graphs.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+**Budget Tracking**: Set and track budgets for different categories.

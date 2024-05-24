@@ -54,8 +54,16 @@ class _ExpenseScreenState extends State<ExpenseScreen> {
                   reset;
                   Navigator.pop(context);
                 },
-                icon: const Icon(Icons.arrow_back_ios)),
-            title: const Text("Flutter Expense Tracker"),
+                icon: Icon(
+                  Icons.arrow_back_ios,
+                  color: Colors.grey[300],
+                )),
+            title: Text(
+              "Expense Tracker",
+              style: TextStyle(
+                color: Colors.grey[300],
+              ),
+            ),
           ),
           body: Form(
             key: formKey,
